@@ -9,32 +9,35 @@ class UserForm extends StatefulWidget {
   _UserFormState createState() => _UserFormState();
 }
 
+
+
 class _UserFormState extends State<UserForm> {
   final _form = GlobalKey<FormState>();
 
   final Map<String, String> _formData = {};
 
   void _loadFormData(User user){
-    // ignore: unnecessary_null_comparison
-    if (user != null){
       _formData['id'] = user.id;
       _formData['name'] = user.name;
       _formData['email'] = user.email;
       _formData['avatarUrl'] = user.avatarUrl;
-    }
+    
   }
 
-  @override
+@override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    
+
     final user = ModalRoute.of(context)!.settings.arguments as User;
 
     _loadFormData(user);
   }
 
+ 
+
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
         title: Text('Formulário de Usuário'),

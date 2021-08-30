@@ -24,6 +24,8 @@ class UserTile extends StatelessWidget {
         child: Row(
         children: <Widget>[
         IconButton(
+          icon: Icon(Icons.edit),
+          color: Colors.orange,
           onPressed: () {
             Navigator.of(context).pushNamed(
               AppRoutes.USER_FORM,
@@ -31,8 +33,6 @@ class UserTile extends StatelessWidget {
             );
 
           }, 
-          icon: Icon(Icons.edit),
-          color: Colors.orange,
         ),
         IconButton(
           icon: Icon(Icons.delete),
